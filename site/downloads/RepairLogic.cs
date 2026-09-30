@@ -32,7 +32,7 @@ public static class RepairLogic
             return "Количество должно быть положительным целым числом.";
         if (!product.Stock.TryGetValue(size, out var stock) || stock <= 0)
             return "Выберите размер, доступный для заказа.";
-        var reserved = cart.Where(x => x.ProductId == product.Id && x.Size == size).Sum(x => x.Quantity);
+        var reserved = cart.Where(x => x.ProductId == product.Id && x.Size == size).Sum(x => (long)x.Quantity);
         return quantity + (long)reserved > stock ? "Количество в заказе превышает остаток выбранного размера." : "";
     }
 
@@ -40,9 +40,13 @@ public static class RepairLogic
     public static string Commit(StoreData data, User user, List<CartLine> cart, DateTime date)
     {
         if (cart.Count == 0) return "Добавьте хотя бы одну позицию в заказ.";
+        if (cart.Any(x => x.Quantity <= 0))
+            return "Количество каждой позиции должно быть положительным.";
         foreach (var group in cart.GroupBy(x => (x.ProductId, x.Size)))
         {
-            var product = data.Products.Single(p => p.Id == group.Key.ProductId);
+            var matches = data.Products.Where(p => p.Id == group.Key.ProductId).ToList();
+            if (matches.Count != 1) return "Товар отсутствует или его идентификатор не уникален. Проверьте данные заказа.";
+            var product = matches[0];
             if (!product.Stock.TryGetValue(group.Key.Size, out var stock) || group.Sum(x => (long)x.Quantity) > stock)
                 return "Остатки изменились. Уменьшите количество или отмените заказ.";
         }

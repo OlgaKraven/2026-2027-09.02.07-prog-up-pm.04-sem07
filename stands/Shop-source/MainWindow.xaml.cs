@@ -55,9 +55,15 @@ public partial class MainWindow : Window
     {
         SearchBox.IsEnabled = CategoryBox.IsEnabled = SortBox.IsEnabled = user != null;
         UserText.Text = user?.FullName ?? "Гость";
+        LoginBox.IsEnabled = LoginButton.IsEnabled = user == null;
     }
     private void Login_Click(object sender, RoutedEventArgs e)
     {
+        if (user != null)
+        {
+            Message("Для смены пользователя сначала нажмите «Выйти». Неподтверждённый заказ отменяется только с вашего согласия.", true);
+            return;
+        }
         user = RepairLogic.Authenticate(data, LoginBox.Text);
         SetAccess();
         if (user == null) Message("Логин не найден. Введите логин из предоставленного списка пользователей.", true);
