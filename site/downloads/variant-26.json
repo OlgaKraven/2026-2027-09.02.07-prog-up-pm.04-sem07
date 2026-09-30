@@ -1,0 +1,91 @@
+{
+  "Subject": "Магазин дорожных сумок",
+  "Users": [
+    {
+      "Login": "client",
+      "FullName": "Иванов Иван Иванович"
+    },
+    {
+      "Login": "buyer",
+      "FullName": "Петрова Анна Сергеевна"
+    }
+  ],
+  "Products": [
+    {
+      "Id": "P1",
+      "Name": "Сумка дорожная",
+      "Description": "Водостойкий материал, модель для ежедневного использования.",
+      "Category": "Сумки",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 126,
+      "Stock": {
+        "S": 5,
+        "L": 3
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    },
+    {
+      "Id": "P2",
+      "Name": "Чемодан тканевый",
+      "Description": "Базовая модель для регулярного использования.",
+      "Category": "Сумки",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 46,
+      "Stock": {
+        "S": 2,
+        "L": 1
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    },
+    {
+      "Id": "P3",
+      "Name": "Сумка дорожная — облегчённая модель",
+      "Description": "Водостойкий материал, модель для ежедневного использования.",
+      "Category": "Чемоданы",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 35,
+      "Stock": {
+        "S": 2,
+        "L": 1
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    },
+    {
+      "Id": "P4",
+      "Name": "Чемодан тканевый — усиленная модель",
+      "Description": "Базовая модель для регулярного использования.",
+      "Category": "Чемоданы",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 246,
+      "Stock": {
+        "S": 2,
+        "L": 1
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    },
+    {
+      "Id": "P5",
+      "Name": "Сумка дорожная — резервная модель",
+      "Description": "Базовая модель для регулярного использования.",
+      "Category": "Сумки",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 76,
+      "Stock": {
+        "S": 2,
+        "L": 0
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    }
+  ],
+  "Orders": []
+}

@@ -1,0 +1,91 @@
+{
+  "Subject": "Магазин дождевой одежды",
+  "Users": [
+    {
+      "Login": "client",
+      "FullName": "Иванов Иван Иванович"
+    },
+    {
+      "Login": "buyer",
+      "FullName": "Петрова Анна Сергеевна"
+    }
+  ],
+  "Products": [
+    {
+      "Id": "P1",
+      "Name": "Плащ дождевой",
+      "Description": "Водостойкий материал, модель для ежедневного использования.",
+      "Category": "Плащи",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 112,
+      "Stock": {
+        "S": 5,
+        "M": 3
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    },
+    {
+      "Id": "P2",
+      "Name": "Куртка мембранная",
+      "Description": "Базовая модель для регулярного использования.",
+      "Category": "Плащи",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 32,
+      "Stock": {
+        "S": 2,
+        "M": 1
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    },
+    {
+      "Id": "P3",
+      "Name": "Плащ дождевой — облегчённая модель",
+      "Description": "Водостойкий материал, модель для ежедневного использования.",
+      "Category": "Куртки",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 21,
+      "Stock": {
+        "S": 2,
+        "M": 1
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    },
+    {
+      "Id": "P4",
+      "Name": "Куртка мембранная — усиленная модель",
+      "Description": "Базовая модель для регулярного использования.",
+      "Category": "Куртки",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 232,
+      "Stock": {
+        "S": 2,
+        "M": 1
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    },
+    {
+      "Id": "P5",
+      "Name": "Плащ дождевой — резервная модель",
+      "Description": "Базовая модель для регулярного использования.",
+      "Category": "Плащи",
+      "Manufacturer": "Учебная фабрика",
+      "Composition": "Текстиль и полимер",
+      "Price": 62,
+      "Stock": {
+        "S": 2,
+        "M": 0
+      },
+      "ImagePath": "",
+      "DiscountPrice": 0
+    }
+  ],
+  "Orders": []
+}
