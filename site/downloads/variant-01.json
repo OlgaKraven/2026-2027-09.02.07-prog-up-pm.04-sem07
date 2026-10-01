@@ -50,8 +50,8 @@
       "Composition": "Материал указан в учебном каталоге",
       "Price": 10,
       "Stock": {
-        "M": 3,
-        "L": 2
+        "30×40 см": 3,
+        "35×45 см": 2
       },
       "ImagePath": "",
       "DiscountPrice": 0
@@ -65,8 +65,8 @@
       "Composition": "Материал указан в учебном каталоге",
       "Price": 221,
       "Stock": {
-        "M": 3,
-        "L": 2
+        "38": 3,
+        "39": 2
       },
       "ImagePath": "",
       "DiscountPrice": 0

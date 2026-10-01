@@ -65,8 +65,7 @@
       "Composition": "Материал указан в учебном каталоге",
       "Price": 222,
       "Stock": {
-        "M": 4,
-        "L": 1
+        "Универсальный": 5
       },
       "ImagePath": "",
       "DiscountPrice": 0
