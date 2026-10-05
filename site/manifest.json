@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "fingerprint": "569126db83de3d8aa6bf0d6193128bb04910ec841c7d601d0443e1e37fb35246",
+  "fingerprint": "0cdd8c229015ad6f30ed1ed0e6ab583c2408e353924fdb70d2568aa422094277",
   "release": true,
   "files": {
-    "areas.html": "051e4c3284c483f46ef6e9fa5b847da322f3e3fbdbc8feac08cd4a8acb051c7e",
+    "areas.html": "505828a25685e727eb60593a1447f283f73c97c776648c6e1716679191b24cc0",
     "assets/favicon.svg": "4d11c3923a0c231e244ba64f5714e45fd998f411b1e0ffa679dfc7979c59fe1d",
     "assets/screenshots/0056dfae44fbe8ae.png": "459766873f39150ad42aa578c6873a49b12e2185552ca24cdbb5d58015304a98",
     "assets/screenshots/357abe8182187537.png": "d6895bacb375e0b4111bff5cfb729789f2370373fdf2e80d7a1efd8126317123",
@@ -16,8 +16,8 @@
     "assets/screenshots/d25b537b89c97021.png": "ce6b7fa601a9bb7fca03cc044cd91a14600a963b030c6d56a12b2df041b8f89b",
     "assets/screenshots/ea829c380a94f2ab.png": "7d5ca691bf5c964f6f0aa662aca7bea411604be507e39c0df233537b15477d93",
     "assets/style.css": "3b26fc680fcf2de668d33b3d7986be3091c3b1f86adbe91eb3099ebeb994fecf",
-    "downloads/assignment.pdf": "a1626f511177aeff520c97e48344275b6d3b9f427711f6d6df903c1605db5e60",
-    "downloads/guide.pdf": "2ad40fbc4814a497152765a51cd1f5ebf5e29f665489e85d62e951e0ea69bb17",
+    "downloads/assignment.pdf": "913b1e4fd6692c85f66ed9a5b43323f27f916ffb54544e14470dbf9d4ed8aed7",
+    "downloads/guide.pdf": "6756d2c75c28148753c506a39c5240ed3d6b160638cc26d86afb9cbefd669326",
     "downloads/RepairLogic.cs": "a513eef1db1ca786dc1a959e6a27f812d1fa75e9984abf32550e6f1830ac4f66",
     "downloads/report-template.md": "0cc0ad50cd0dcde85b3f430d412a4a7adea84a03a97562a12a672cbe58a0eca9",
     "downloads/Shop-fixed-example.zip": "d8b256ef286966852832b73a83c92b562184f969d7e237b42850b48571a43735",
@@ -52,7 +52,7 @@
     "downloads/variant-28.json": "1a3009e343e0c0eba0378afb68b827e4201286e276b1a5e330d2f30da37041ab",
     "downloads/variant-29.json": "c085619e59f3e1c60964b6ff7033889f40001de34c5a68254e3e48dd36c175ee",
     "downloads/variant-30.json": "b2945460b77dededf28530da72d9e0da2557a980f3086135dc69fc056ab19971",
-    "index.html": "c88ac86c4f462011b42d4e8ef87929ad7c4b01299cff89638efdab2f8e4f9697",
-    "lessons.html": "acd47aa76451ae03642dc1eae2118caad161700158836f9cc7968e4b093ebf99"
+    "index.html": "31105eeb721cc442730e4f6f41b02c5dd5b0a6b32e81d050de3a30cf0590897c",
+    "lessons.html": "78c8c41d1c95848af6502af27971c87e3a867644d460c96565d9b4051c9e9536"
   }
 }
