@@ -65,6 +65,10 @@ def area(a):
     stages=[a['blocks'][1],*a['blocks'][3:]]
     stages=[dict(b,title=re.sub(r'^\d+\.\s*','',b['title'])) for b in stages]
     return '<article class="area" id="variant-'+str(a['id'])+'" data-variant="'+str(a['id'])+'">'+head('ПМ.04 · Вариант '+f'{a["id"]:02}',a['title'].split('. ',1)[1],'Сопроводить готовое приложение; исправить три диагностических компонента.')+ident+table+'<ol class="route">'+''.join(card(b,i) for i,b in enumerate(stages,1))+'</ol>'+buttons([(f'downloads/variant-{a["id"]:02}.json','Данные этого варианта'),('downloads/Shop-source.zip','Исходный проект'),('lessons.html#step-1','Подготовка рабочей копии')])+'</article>'
+area_start=chapter(dict(title='Файлы и начало работы',blocks=[
+dict(kind='text',title='Где находится проект',text='Скачать архив исходного стенда по прямой ссылке ниже и распаковать. Открыть stands/Shop-source/Shop.csproj в Visual Studio. Файл data.json в этой папке содержит только демонстрационный образец «Контур».',check='Для индивидуальной работы выбрать собственные данные из папки stands/data этого же архива.'),
+dict(kind='text',title='Как найти данные своего варианта',text='Номер варианта указан в заголовке карточки предметной области. Все 30 наборов находятся в папке stands/data. Имя файла — variant-NN.json: например, для варианта 07 выбрать variant-07.json. Из выбранного файла создать baseline.json — неизменяемую контрольную копию, и work-data.json — рабочую копию. В аргументах запуска указать полный путь к work-data.json в кавычках; порядок настройки приведён в начале методички.',check='Название окна, позиции, категории, исполнения и исходные остатки должны совпасть с карточкой назначенной области. Отдельно скачивать каждый JSON не требуется.'),
+dict(kind='text',title='Прямые ссылки на стенды',text='Исходный стенд со всеми данными вариантов: '+download_base+'downloads/Shop-source.zip\n\nИсправленный демонстрационный образец: '+download_base+'downloads/Shop-fixed-example.zip',check='Работу начать с исходного стенда. Исправленный образец открыть отдельно для сверки после самостоятельной диагностики; его демонстрационные данные не заменяют данные своего варианта.')]),'Начало')
 areas=''.join(area(a) for a in C['areas'])
 chooser='<div class="chooser"><label for="variant">Предметная область</label><select id="variant">'+''.join(f'<option value="{a["id"]}">{esc(a["title"])}</option>' for a in C['areas'])+'</select><button id="prev" type="button">Предыдущая</button><button id="next" type="button">Следующая</button><p id="position" aria-live="polite"></p></div>'
 script='''<script>
@@ -79,9 +83,9 @@ document.querySelector('#prev').addEventListener('click',()=>show(Number(chooser
 document.querySelector('#next').addEventListener('click',()=>show(Number(chooser.value)+1));
 show(location.hash.split('-').pop());
 </script>'''
-put('areas.html',page('Предметные области',chooser+areas+buttons([('downloads/guide.pdf','Все предметные области · PDF')]),'areas.html',script))
+put('areas.html',page('Предметные области',area_start+chooser+areas+buttons([('downloads/guide.pdf','Все предметные области · PDF')]),'areas.html',script))
 put('print-method.html',page('Методические рекомендации',hero+assignment+material+method+literature))
-put('print-areas.html',page('Список предметных областей',head('Учебная практика ПМ.04','Список предметных областей','Диагностика и сопровождение приложений обслуживания оборудования.')+areas))
+put('print-areas.html',page('Список предметных областей',head('Учебная практика ПМ.04','Список предметных областей','Диагностика и сопровождение приложений обслуживания оборудования.')+area_start.replace(head('ПМ.04 · Раздел Начало','Файлы и начало работы'),'')+areas))
 
 put('assets/style.css','''@font-face{font-family:Golos;src:url(fonts/GolosText-variable.ttf);font-weight:100 900;font-display:swap}
 :root{--red:#ed131c;--ink:#1c1c1c;--soft:#f4f4f6;--line:#dfe1e5;--muted:#606773}

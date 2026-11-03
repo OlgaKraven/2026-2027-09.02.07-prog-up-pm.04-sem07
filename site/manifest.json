@@ -2,7 +2,7 @@
   "schema_version": 1,
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "areas.html": "f950e7cc8c412c3f2de6f6447436957bfa95b71492d6c769178a913f0b6214de",
+    "areas.html": "a4c6ed719ceef8fc1be449e96def9e88309df13ec06f016c795b2e0c78f0b8e0",
     "assets/favicon.svg": "4d11c3923a0c231e244ba64f5714e45fd998f411b1e0ffa679dfc7979c59fe1d",
     "assets/fonts/GolosText-variable.ttf": "17bb58fb69aec2dfb047a2ebf52534023e9b688c97a6b7ac795b0a72912c2063",
     "assets/fonts/OFL.txt": "ff532f9e8789f09a9fdffc3c0954eedfb0a48be77b2e2eb90f5f82e4f347f50c",
@@ -21,9 +21,9 @@
     "assets/screenshots/route-restarted.png": "f7f5680b61bc70184b299498198452356808fa68c81a6feda7d3d90f3e1e719b",
     "assets/screenshots/route-two-lines.png": "b47872f58aa4e219abc87ad8333b1ed2579c8a04c647b9b4b3ee828faee33fb9",
     "assets/style.css": "6589a8164a95d2dce308d4c320447872274a154850cc5793e4d9d123e8eef403",
-    "downloads/assignment.pdf": "d360cc7c7f9a426ec94daaa868aa036c61c4ecaeab9add928a585ea85c091f77",
+    "downloads/assignment.pdf": "3f402457dc6491e1abcc10ae2177847dfec403e6843ad384332d136efe531225",
     "downloads/contract.md": "7202eae36fb79cdbf2efcf0cfb3ecf4375e181e4dadff5ac4b13a7bd6906f544",
-    "downloads/guide.pdf": "71357e62936e40ddfc82b00af11904cdb7989359ccca968fcfcfad5c43540efc",
+    "downloads/guide.pdf": "f1c57c28f254af7395537f494978a3ff083b201e0e8d9d2dd5a23cc2c3b65d7c",
     "downloads/RepairLogic.cs": "705d775567bd5eb5fdd073ef3e3ed2b01cc10ffbc48f40a5696f55ccdaa52b05",
     "downloads/report-template.docx": "9535c659e6f7dee9c90d0d6d206b9a2820a0578b283acd0adb04be91c141bc60",
     "downloads/report-template.md": "2b2ad6f7481c45767d5a604a8f6a8e0b6e0a1c6e61ea5e68206d57eaa1dc00bc",
@@ -61,7 +61,7 @@
     "downloads/variant-30.json": "f2d184ecb455e4dfade1d55f66f73145b4b6d45f167aa80fba4d449a873895b1",
     "index.html": "6eb916a9cb291feb15f3cb4892cd2e61eaaef9696e717066d1cc2f87ca9a4ace",
     "lessons.html": "290f21957ccb460f7301ffcae3a1b1a0f72727748b6757f658f5e6b7dad2f738",
-    "print-areas.html": "d430db69e7769809df8a0f14ff91cb0ab980cb5cf557fa58b0fad70c340e8c55",
+    "print-areas.html": "d34a9b6b169bd4f499df5aa5e253c7bb49990d019c2279a3865750002963e65d",
     "print-method.html": "357f08b2d49bdd06da13eed9f490f06042daac0805368a04eaac86478f9db0c9"
   }
 }
