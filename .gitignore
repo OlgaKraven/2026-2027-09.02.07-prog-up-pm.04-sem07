@@ -1,0 +1,6 @@
+.inventory-build/
+.inventory-qa/
+output/
+**/bin/
+**/obj/
+.playwright-cli/

@@ -37,7 +37,7 @@ public partial class MainWindow : Window
             ready = true;
             RefreshCatalog();
             SetAccess();
-            StatusText.Text = "Откройте товар кнопкой в строке каталога. Для заказа войдите по зарегистрированному логину.";
+            StatusText.Text = "Откройте позицию кнопкой в строке каталога. Для заявки войдите по зарегистрированному логину.";
         }
         catch (Exception ex) when (ex is IOException or JsonException or InvalidDataException or UnauthorizedAccessException)
         {
@@ -61,17 +61,17 @@ public partial class MainWindow : Window
     {
         if (user != null)
         {
-            Message("Для смены пользователя сначала нажмите «Выйти». Неподтверждённый заказ отменяется только с вашего согласия.", true);
+            Message("Для смены пользователя сначала нажмите «Выйти». Неподтверждённая заявка отменяется только с вашего согласия.", true);
             return;
         }
-        user = RepairLogic.Authenticate(data, LoginBox.Text);
+        user = RepairLogic.Authenticate(data.Users, LoginBox.Text);
         SetAccess();
         if (user == null) Message("Логин не найден. Введите логин из предоставленного списка пользователей.", true);
         else StatusText.Text = "Вход выполнен: " + user.FullName;
     }
     private void Logout_Click(object sender, RoutedEventArgs e)
     {
-        if (cart.Count > 0 && MessageBox.Show(this, "При выходе неподтверждённый заказ будет отменён. Продолжить?",
+        if (cart.Count > 0 && MessageBox.Show(this, "При выходе неподтверждённая заявка будет отменена. Продолжить?",
             "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes) return;
         cart.Clear();
         user = null;
@@ -85,13 +85,8 @@ public partial class MainWindow : Window
     private void Options_Changed(object sender, SelectionChangedEventArgs e) { if (ready) RefreshCatalog(); }
     private void RefreshCatalog()
     {
-        var first = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-        foreach (var p in data.Products)
-        {
-            bool ordered = data.Orders.Any(o => o.Date >= first.AddMonths(-1) && o.Date < first && o.Lines.Any(l => l.ProductId == p.Id));
-            p.DiscountPrice = decimal.Round(p.Price * (ordered ? 1m : .75m), 2);
-        }
-        ProductsGrid.ItemsSource = RepairLogic.Catalog(data, SearchBox.Text, CategoryBox.SelectedItem?.ToString() ?? "Все категории", SortBox.SelectedIndex == 1);
+        foreach (var p in data.Products) p.DiscountPrice = decimal.Round(p.Price, 2);
+        ProductsGrid.ItemsSource = RepairLogic.Catalog(data.Products, SearchBox.Text, CategoryBox.SelectedItem?.ToString() ?? "Все категории", SortBox.SelectedIndex == 1);
         ProductsGrid.UpdateLayout();
     }
     private void Product_Open(object sender, MouseButtonEventArgs e) { if (ProductsGrid.SelectedItem is Product p) OpenProduct(p); }
@@ -99,7 +94,7 @@ public partial class MainWindow : Window
     private void OpenProduct(Product product)
     {
         selected = product;
-        DetailsText.Text = $"{product.Name} · {product.Manufacturer}\nКатегория: {product.Category}; цена со скидкой: {product.DiscountPrice:F2} руб.\nСостав: {product.Composition}\n{product.Description}\nРазмерный ряд: {string.Join(", ", product.Stock.Select(x => $"{x.Key}: {x.Value}"))}";
+        DetailsText.Text = $"{product.Name} · {product.Manufacturer}\nКатегория: {product.Category}; стоимость: {product.DiscountPrice:F2} руб.\nНазначение: {product.Composition}\n{product.Description}\nИсполнения: {string.Join(", ", product.Stock.Select(x => $"{x.Key}: {x.Value}"))}";
         SizeBox.ItemsSource = product.Stock.Where(x => x.Value > 0).Select(x => x.Key).ToList();
         SizeBox.SelectedIndex = 0;
         QuantityBox.Text = "1";
@@ -110,43 +105,43 @@ public partial class MainWindow : Window
         CartGrid.ItemsSource = cart.ToList();
         CatalogPanel.Visibility = Visibility.Collapsed;
         DetailPanel.Visibility = Visibility.Visible;
-        Title = "Магазин — карточка товара и заказ";
+        Title = "Сервис — позиция и заявка";
     }
     private void ShowCatalog()
     {
         DetailPanel.Visibility = Visibility.Collapsed;
         CatalogPanel.Visibility = Visibility.Visible;
-        Title = "Магазин — каталог";
+        Title = "Сервис — каталог";
         RefreshCatalog();
     }
     private void Back_Click(object sender, RoutedEventArgs e) { RepairLogic.Back(cart); ShowCatalog(); }
     private void Add_Click(object sender, RoutedEventArgs e)
     {
-        if (user == null) { Message("Для оформления заказа войдите по зарегистрированному логину.", true); return; }
+        if (user == null) { Message("Для оформления заявки войдите по зарегистрированному логину.", true); return; }
         if (selected == null) return;
         var size = SizeBox.SelectedItem?.ToString() ?? "";
-        var error = RepairLogic.ValidateQuantity(selected, size, QuantityBox.Text, cart);
+        var error = OrderService.ValidateQuantity(selected, size, QuantityBox.Text, cart);
         if (error != "") { Message(error, true); return; }
         cart.Add(new CartLine { ProductId = selected.Id, Name = selected.Name, Size = size,
             Quantity = int.Parse(QuantityBox.Text), Price = selected.DiscountPrice });
         CartGrid.ItemsSource = cart.ToList();
-        StatusText.Text = $"Добавлено в заказ: {selected.Name}. Позиций: {cart.Count}. Итог: {cart.Sum(x => x.Total):F2} руб.";
+        StatusText.Text = $"Добавлено в заявку: {selected.Name}. Позиций: {cart.Count}. Итог: {cart.Sum(x => x.Total):F2} руб.";
     }
     private void Cancel_Click(object sender, RoutedEventArgs e)
     {
-        if (cart.Count == 0) { StatusText.Text = "Неподтверждённый заказ пуст."; return; }
-        if (MessageBox.Show(this, "Отменить неподтверждённый заказ? Остатки не изменятся.", "Предупреждение",
+        if (cart.Count == 0) { StatusText.Text = "Неподтверждённая заявка пуста."; return; }
+        if (MessageBox.Show(this, "Отменить неподтверждённую заявку? Остатки не изменятся.", "Предупреждение",
             MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes) return;
         cart.Clear();
         ShowCatalog();
-        StatusText.Text = "Заказ отменён. Остатки сохранены.";
+        StatusText.Text = "Заявка отменена. Остатки сохранены.";
     }
     private void Confirm_Click(object sender, RoutedEventArgs e)
     {
-        if (user == null) { Message("Для подтверждения заказа необходимо войти.", true); return; }
+        if (user == null) { Message("Для подтверждения заявки необходимо войти.", true); return; }
         // Сначала изменяется копия. При ошибке сохранения исходные данные остаются доступны.
         var candidate = JsonSerializer.Deserialize<StoreData>(JsonSerializer.Serialize(data))!;
-        var error = RepairLogic.Commit(candidate, user, cart.ToList(), DateTime.Now);
+        var error = OrderService.Commit(candidate, user, cart.ToList(), DateTime.Now);
         if (error != "") { Message(error, true); return; }
         try
         {
@@ -155,9 +150,9 @@ public partial class MainWindow : Window
             data = candidate;
             cart.Clear();
             ShowCatalog();
-            Message("Заказ оформлен. Дата сохранена, остатки каталога обновлены.");
+            Message("Заявка оформлена. Дата сохранена, остатки каталога обновлены.");
         }
         catch (Exception ex) when (ex is IOException or UnauthorizedAccessException)
-        { Message("Не удалось сохранить заказ. Проверьте доступ к рабочей папке и повторите подтверждение. " + ex.Message, true); }
+        { Message("Не удалось сохранить заявку. Проверьте доступ к рабочей папке и повторите подтверждение. " + ex.Message, true); }
     }
 }

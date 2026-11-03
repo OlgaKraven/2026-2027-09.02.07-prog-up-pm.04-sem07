@@ -1,10 +1,10 @@
 namespace Shop;
-public sealed class User
+public sealed class User : IRegisteredUser
 {
     public string Login { get; set; } = "";
     public string FullName { get; set; } = "";
 }
-public sealed class Product
+public sealed class Product : ICatalogItem
 {
     public string Id { get; set; } = "";
     public string Name { get; set; } = "";

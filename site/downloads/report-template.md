@@ -1,148 +1,57 @@
-<div lang="ru" style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">
+# Отчёт по учебной практике ПМ.04
 
-<h1 style="font-family:'Times New Roman';color:#000;font-size:16pt;text-align:center;line-height:1.5;page-break-after:avoid;">ОТЧЁТ — УЧЕБНАЯ ПРАКТИКА ПМ.04 «СОПРОВОЖДЕНИЕ И ОБСЛУЖИВАНИЕ ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ КОМПЬЮТЕРНЫХ СИСТЕМ»</h1>
+ФИО: ____________________
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">ФИО: ____________________</p>
+Группа: ____________________
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Группа: ____________________</p>
+Вариант и область: ____________________
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Вариант: ____________________</p>
+Ссылка на репозиторий проекта: ____________________
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Предметная область: ____________________</p>
+## 1. Исходные условия
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Дата: ____________________</p>
+Область, группа, вариант, среда, исходный файл и контрольные данные.
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Версия программы: ____________________</p>
+Ожидаемое до запуска: ____________________
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Ссылка на репозиторий проекта: ____________________</p>
+Фактическое и доказательство: ____________________
 
-<h2 style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;page-break-after:avoid;">Исходные условия</h2>
+## 2. Три диагностических результата
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Укажите область, исходные данные, версию среды и состояние приложения до изменения.</p>
+Для D1, D2, D3: вход, ожидание, симптом, причина, правка, повтор и регрессия.
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Заполните по результатам своей работы.</p>
+Ожидаемое до запуска: ____________________
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 1 — Исходный каталог</p>
-</div>
+Фактическое и доказательство: ____________________
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 2 — Воспроизведённый дефект</p>
-</div>
+## 3. Отказ и исправление ввода
 
-<h2 style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;page-break-after:avoid;">Выполненные действия и причины</h2>
+Поле до отказа, сохранение заявки, исправление, успешное продолжение.
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Для D1–D5 опишите симптом, обработчик, причину, изменение и результат повторной проверки.</p>
+Ожидаемое до запуска: ____________________
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Заполните по результатам своей работы.</p>
+Фактическое и доказательство: ____________________
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 3 — Вход пользователя</p>
-</div>
+## 4. Готовая операция и дополнительный сценарий
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 4 — Совместные поиск и категория</p>
-</div>
+Ожидаемые и фактические Id, остатки, дата и сохранение после перезапуска.
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 5 — Порядок цены</p>
-</div>
+Ожидаемое до запуска: ____________________
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 6 — Заказ после возврата</p>
-</div>
+Фактическое и доказательство: ____________________
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 7 — Отклонение недопустимого количества</p>
-</div>
+## 5. Передача и ограничения
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 8 — Обновлённые остатки</p>
-</div>
+Ссылка на репозиторий, инструкция, переносимый контракт, ограничения JSON и непроверенные условия.
 
-<h2 style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;page-break-after:avoid;">Результаты дополнительных заданий</h2>
+Ожидаемое до запуска: ____________________
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Опишите контрольные условия и фактические результаты дополнительного сценария своего варианта.</p>
+Фактическое и доказательство: ____________________
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Заполните по результатам своей работы.</p>
+## 6. Инструкция пользователя
 
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 9 — Дополнительный сценарий варианта</p>
-</div>
+Запуск с рабочим файлом, вход, совместный отбор, возврат, исправление ввода, отмена и подтверждение.
 
-<h2 style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;page-break-after:avoid;">Проверки и передача пользователю</h2>
+## 7. Вывод
 
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Запишите ожидаемые и фактические результаты регрессии, сохранение после перезапуска; приведите инструкцию эксплуатации.</p>
-
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Заполните по результатам своей работы.</p>
-
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 10 — Сохранённый заказ и дата</p>
-</div>
-
-<div style="page-break-inside:avoid;break-inside:avoid;">
-<table width="100%" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;width:100%;page-break-after:avoid;">
-<tr>
-<td height="220" style="border:1px solid #000;height:220px;text-align:center;vertical-align:middle;font-family:'Times New Roman';color:#000;font-size:12pt;line-height:1;text-indent:0;">Вставьте скриншот</td>
-</tr>
-</table>
-<p style="font-family:'Times New Roman';color:#000;font-size:12pt;text-align:center;line-height:1;text-indent:0;page-break-before:avoid;">Рисунок 11 — Остатки после перезапуска</p>
-</div>
-
-<h2 style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;page-break-after:avoid;">Вывод</h2>
-
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Объясните связь причин, исправлений и доказательств, укажите проверенные ограничения.</p>
-
-<p style="font-family:'Times New Roman';color:#000;font-size:14pt;text-align:justify;line-height:1.5;text-indent:1.25cm;">Заполните по результатам своей работы.</p>
-
-</div>
+Связь причин и исправлений. Проверенные ограничения. Непроверенные условия.
