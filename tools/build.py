@@ -39,7 +39,7 @@ def buttons(items): return '<div class="actions">'+''.join(f'<a class="button" h
 
 files=section=dict(title='Файлы для работы',blocks=[
 dict(kind='text',title='Исходный проект',text='Начальная копия с тремя дефектами и готовой операцией заявки. Архив сохранить отдельно от рабочих папок.',check='Открыть stands/Shop-source/Shop.csproj после распаковки.'),
-dict(kind='text',title='Данные назначенного варианта',text='В карточке своей области скачать variant-NN.json. Из него создать baseline.json и work-data.json; до начала испытаний сверить Id, исполнения и дополнительные условия.',check='Демонстрационные данные не подменяют индивидуальную область.'),
+dict(kind='text',title='Данные назначенного варианта',text='В распакованном архиве исходного стенда выбрать stands/data/variant-NN.json своего варианта. Из него создать baseline.json и work-data.json; до начала испытаний сверить Id, исполнения и дополнительные условия. Все 30 наборов входят в один архив.',check='Демонстрационные данные не подменяют индивидуальную область.'),
 dict(kind='text',title='Образец и формы',text='Исправленный проект «Контур» служит отдельной сверкой после анализа. Шаблон отчёта задаёт состав доказательств. Аттестационный лист, индивидуальное задание и презентацию предоставляет преподаватель через EatDoners.',check='Ссылка на собственный репозиторий указывается в самом отчёте.')])
 filebuttons=buttons([('downloads/Shop-source.zip','Исходный проект'),('areas.html','Данные своего варианта'),('downloads/Shop-fixed-example.zip','Образец для сверки'),('downloads/report-template.docx','Форма отчёта · DOCX'),('downloads/contract.md','Контракт компонентов')])
 download_base='https://olgakraven.github.io/2026-2027-09.02.07-prog-up-pm.04-sem07/'
@@ -99,6 +99,9 @@ for d in C['downloads']:
         with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as z:
             for p in sorted(src.iterdir()):
                 if p.is_file():z.write(p,p.relative_to(ROOT).as_posix())
+            if d['name']=='Shop-source.zip':
+                for p in sorted((ROOT/'stands/data').glob('variant-*.json')):
+                    z.write(p,p.relative_to(ROOT).as_posix())
     else:shutil.copyfile(src,dest)
 for src,dst in [('stands/Shop-fixed/RepairLogic.cs','RepairLogic.cs'),('content/contract.md','contract.md')]:shutil.copyfile(ROOT/src,dl/dst)
 report=(ROOT/'content/report-template.md').read_text(encoding='utf-8')

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "areas.html": "e1c323a8aae3e027ea343d33530cab7b2f7d843dec70a24b1c0e665665acc4ac",
+    "areas.html": "f950e7cc8c412c3f2de6f6447436957bfa95b71492d6c769178a913f0b6214de",
     "assets/favicon.svg": "4d11c3923a0c231e244ba64f5714e45fd998f411b1e0ffa679dfc7979c59fe1d",
     "assets/fonts/GolosText-variable.ttf": "17bb58fb69aec2dfb047a2ebf52534023e9b688c97a6b7ac795b0a72912c2063",
     "assets/fonts/OFL.txt": "ff532f9e8789f09a9fdffc3c0954eedfb0a48be77b2e2eb90f5f82e4f347f50c",
@@ -21,14 +21,14 @@
     "assets/screenshots/route-restarted.png": "f7f5680b61bc70184b299498198452356808fa68c81a6feda7d3d90f3e1e719b",
     "assets/screenshots/route-two-lines.png": "b47872f58aa4e219abc87ad8333b1ed2579c8a04c647b9b4b3ee828faee33fb9",
     "assets/style.css": "6589a8164a95d2dce308d4c320447872274a154850cc5793e4d9d123e8eef403",
-    "downloads/assignment.pdf": "f949f5644a06655ac3f172a940379153082a87d9dbc3d0182e737fe704738559",
+    "downloads/assignment.pdf": "d360cc7c7f9a426ec94daaa868aa036c61c4ecaeab9add928a585ea85c091f77",
     "downloads/contract.md": "7202eae36fb79cdbf2efcf0cfb3ecf4375e181e4dadff5ac4b13a7bd6906f544",
-    "downloads/guide.pdf": "a551e02af64a7081439902edc5f460db4f4c308f41293c8773b62e97a46fcbfa",
+    "downloads/guide.pdf": "71357e62936e40ddfc82b00af11904cdb7989359ccca968fcfcfad5c43540efc",
     "downloads/RepairLogic.cs": "705d775567bd5eb5fdd073ef3e3ed2b01cc10ffbc48f40a5696f55ccdaa52b05",
     "downloads/report-template.docx": "9535c659e6f7dee9c90d0d6d206b9a2820a0578b283acd0adb04be91c141bc60",
     "downloads/report-template.md": "2b2ad6f7481c45767d5a604a8f6a8e0b6e0a1c6e61ea5e68206d57eaa1dc00bc",
     "downloads/Shop-fixed-example.zip": "b0b64de0bec325263b49eb29a209053f530e7aa5db83b7b40ca947440af7870e",
-    "downloads/Shop-source.zip": "c4901bdcb72c238af4e2ad2cab77140636b04a7afc6a26cae0a119ce557f363f",
+    "downloads/Shop-source.zip": "0e0e9dc9fd7aa882addd73a79c353417d14103dad4a5e0eced4751b9828e0aac",
     "downloads/variant-01.json": "6e1eed208d85979866504b5afeaffb6a35cec7c2a610cd996358e3c30f12b6b4",
     "downloads/variant-02.json": "1cb44697130421a8533f2348eba3a814e6206e171f3e67f04b48c67c17f6d363",
     "downloads/variant-03.json": "db40bd40d236148e426ef83d4b9e495e1a79fc8af428b9c32927d0122eefefcd",
@@ -59,9 +59,9 @@
     "downloads/variant-28.json": "3c91d3c2df2ebd7ea9a5e028133167c19eea50451d9ad620ea711025915c02a4",
     "downloads/variant-29.json": "a8faf1a81b7c33ed74a6c4330d63a92fd6181e41c0e35f179410a49cd993a99a",
     "downloads/variant-30.json": "f2d184ecb455e4dfade1d55f66f73145b4b6d45f167aa80fba4d449a873895b1",
-    "index.html": "b42a46383fcb7262bb4174e5c6ac5578f41ddfa7ea519029de7da82e89806aad",
-    "lessons.html": "b59507a6e22e04a0e67f79f400c39e499cee9e9991eb8c762ba53e595653604c",
-    "print-areas.html": "9f926625754bfabaff1ab3e60a176368d3a213815c761e4468804a041636e758",
-    "print-method.html": "43cf4b5b3e1fac3ef3114226912037e3cd31f004ace68fe0211c1f0a000d9b70"
+    "index.html": "6eb916a9cb291feb15f3cb4892cd2e61eaaef9696e717066d1cc2f87ca9a4ace",
+    "lessons.html": "290f21957ccb460f7301ffcae3a1b1a0f72727748b6757f658f5e6b7dad2f738",
+    "print-areas.html": "d430db69e7769809df8a0f14ff91cb0ab980cb5cf557fa58b0fad70c340e8c55",
+    "print-method.html": "357f08b2d49bdd06da13eed9f490f06042daac0805368a04eaac86478f9db0c9"
   }
 }
