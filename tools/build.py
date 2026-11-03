@@ -43,7 +43,7 @@ dict(kind='text',title='Данные назначенного варианта',
 dict(kind='text',title='Образец и формы',text='Исправленный проект «Контур» служит отдельной сверкой после анализа. Шаблон отчёта задаёт состав доказательств. Аттестационный лист, индивидуальное задание и презентацию предоставляет преподаватель через EatDoners.',check='Ссылка на собственный репозиторий указывается в самом отчёте.')])
 filebuttons=buttons([('downloads/Shop-source.zip','Исходный проект'),('areas.html','Данные своего варианта'),('downloads/Shop-fixed-example.zip','Образец для сверки'),('downloads/report-template.docx','Форма отчёта · DOCX'),('downloads/contract.md','Контракт компонентов')])
 download_base='https://olgakraven.github.io/2026-2027-09.02.07-prog-up-pm.04-sem07/'
-files['blocks'].append(dict(kind='text',title='Прямые ссылки на скачивание',text='Исходный стенд: '+download_base+'downloads/Shop-source.zip\n\nИсправленный образец: '+download_base+'downloads/Shop-fixed-example.zip\n\nФорма отчёта DOCX: '+download_base+'downloads/report-template.docx\n\nДанные индивидуальных вариантов: '+download_base+'areas.html',check='Скачать исходный проект и JSON назначенного варианта. Исправленный образец открыть отдельно для сверки.'))
+files['blocks'].append(dict(kind='text',title='Прямые ссылки на скачивание',text='Исходный стенд: '+download_base+'downloads/Shop-source.zip\n\nИсправленный образец: '+download_base+'downloads/Shop-fixed-example.zip',check='Скачать исходный проект. Исправленный образец открыть отдельно для сверки.'))
 assignment=''.join(chapter(s,1,'assignment') for s in C['assignment'])
 material=chapter(files,2,'files')+filebuttons
 method=''.join(chapter(s,f'3.{i}',f'step-{i}') for i,s in enumerate(C['guide'],1))
