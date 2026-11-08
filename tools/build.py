@@ -37,13 +37,12 @@ def page(title,body,active='',extra=''):
     return '<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+' — УП ПМ.04</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="assets/style.css"></head><body>'+nav(active)+'<main id="main">'+body+'</main>'+extra+'</body></html>'
 def buttons(items): return '<div class="actions">'+''.join(f'<a class="button" href="{esc(p)}">{esc(n)}</a>' for p,n in items)+'</div>'
 
-files=section=dict(title='Файлы для работы',blocks=[
-dict(kind='text',title='Исходный проект',text='Начальная копия с тремя дефектами и готовой операцией заявки. Архив сохранить отдельно от рабочих папок.',check='Открыть stands/Shop-source/Shop.csproj после распаковки.'),
-dict(kind='text',title='Данные назначенного варианта',text='В распакованном архиве исходного стенда выбрать stands/data/variant-NN.json своего варианта. Из него создать baseline.json и work-data.json; до начала испытаний сверить Id, исполнения и дополнительные условия. Все 30 наборов входят в один архив.',check='Демонстрационные данные не подменяют индивидуальную область.'),
-dict(kind='text',title='Образец и формы',text='Исправленный проект «Контур» служит отдельной сверкой после анализа. Шаблон отчёта задаёт состав доказательств. Аттестационный лист, индивидуальное задание и презентацию предоставляет преподаватель через EatDoners.',check='Ссылка на собственный репозиторий указывается в самом отчёте.')])
-filebuttons=buttons([('downloads/Shop-source.zip','Исходный проект'),('areas.html','Данные своего варианта'),('downloads/Shop-fixed-example.zip','Образец для сверки'),('downloads/report-template.docx','Форма отчёта · DOCX'),('downloads/contract.md','Контракт компонентов')])
 download_base='https://olgakraven.github.io/2026-2027-09.02.07-prog-up-pm.04-sem07/'
-files['blocks'].append(dict(kind='text',title='Прямые ссылки на скачивание',text='Исходный стенд: '+download_base+'downloads/Shop-source.zip\n\nИсправленный образец: '+download_base+'downloads/Shop-fixed-example.zip',check='Скачать исходный проект. Исправленный образец открыть отдельно для сверки.'))
+files=dict(title='Файлы для работы',blocks=[
+dict(kind='text',title='Стенд своего варианта',text='Найдите вариант по номеру в списке группы. В отдельном PDF с предметными областями или на странице варианта откройте ссылку на Shop-variant-NN.zip.\n\n'+download_base+'downloads/guide.pdf',check='Внутри архива в stands/Shop-source находятся Shop.csproj и две копии данных вашего варианта.'),
+dict(kind='text',title='Демонстрация и формы',text='Исходный образец «Контур» используется для разбора. Исправленный образец открывается для сверки после собственной диагностики. Word-бланк, пояснительная записка, аттестационный лист, индивидуальное задание и Приложение 1 находятся в ZIP EatDoners.'),
+dict(kind='text',title='Демонстрационные архивы',text='Исходный «Контур»: '+download_base+'downloads/Shop-source.zip\n\nИсправленный «Контур»: '+download_base+'downloads/Shop-fixed-example.zip')])
+filebuttons=buttons([('downloads/guide.pdf','Список предметных областей · PDF'),('areas.html','Открыть карточки вариантов'),('downloads/Shop-source.zip','Исходный образец'),('downloads/Shop-fixed-example.zip','Исправленный образец'),('downloads/report-template.docx','Форма отчёта · DOCX'),('downloads/contract.md','Контракт компонентов')])
 assignment=''.join(chapter(s,1,'assignment') for s in C['assignment'])
 material=chapter(files,2,'files')+filebuttons
 method=''.join(chapter(s,f'3.{i}',f'step-{i}') for i,s in enumerate(C['guide'],1))
@@ -64,11 +63,12 @@ def area(a):
     table='<section class="data"><h2>Исходные данные области</h2><table><thead><tr><th>Id и позиция</th><th>Категория и стоимость</th><th>Исполнение → остаток</th></tr></thead><tbody>'+''.join('<tr><td><strong>'+esc(p['Id'])+'</strong> · '+esc(p['Name'])+'</td><td>'+esc(p['Category'])+'<br>'+esc(p['Price'])+' руб.</td><td>'+'<br>'.join(esc(k)+' → '+str(v) for k,v in p['Stock'].items())+'</td></tr>' for p in data['Products'])+'</tbody></table></section>'
     stages=[a['blocks'][1],*a['blocks'][3:]]
     stages=[dict(b,title=re.sub(r'^\d+\.\s*','',b['title'])) for b in stages]
-    return '<article class="area" id="variant-'+str(a['id'])+'" data-variant="'+str(a['id'])+'">'+head('ПМ.04 · Вариант '+f'{a["id"]:02}',a['title'].split('. ',1)[1],'Сопроводить готовое приложение; исправить три диагностических компонента.')+ident+table+'<ol class="route">'+''.join(card(b,i) for i,b in enumerate(stages,1))+'</ol>'+buttons([(f'downloads/variant-{a["id"]:02}.json','Данные этого варианта'),('downloads/Shop-source.zip','Исходный проект'),('lessons.html#step-1','Подготовка рабочей копии')])+'</article>'
+    archive=f'Shop-variant-{a["id"]:02}.zip'
+    download=f'<p><a href="{download_base}downloads/{archive}">Скачать стенд варианта {a["id"]:02} · ZIP</a></p>'
+    return '<article class="area" id="variant-'+str(a['id'])+'" data-variant="'+str(a['id'])+'">'+head('ПМ.04 · Вариант '+f'{a["id"]:02}',a['title'].split('. ',1)[1],'Сопроводить готовое приложение и исправить три диагностических компонента.')+download+ident+table+'<ol class="route">'+''.join(card(b,i) for i,b in enumerate(stages,1))+'</ol>'+buttons([('lessons.html#step-1','Подготовка рабочей копии')])+'</article>'
 area_start=chapter(dict(title='Файлы и начало работы',blocks=[
-dict(kind='text',title='Где находится проект',text='Скачать архив исходного стенда по прямой ссылке ниже и распаковать. Открыть stands/Shop-source/Shop.csproj в Visual Studio. Файл data.json в этой папке содержит только демонстрационный образец «Контур».',check='Для индивидуальной работы выбрать собственные данные из папки stands/data этого же архива.'),
-dict(kind='text',title='Как найти данные своего варианта',text='Номер варианта указан в заголовке карточки предметной области. Все 30 наборов находятся в папке stands/data. Имя файла — variant-NN.json: например, для варианта 07 выбрать variant-07.json. Из выбранного файла создать baseline.json — неизменяемую контрольную копию, и work-data.json — рабочую копию. В аргументах запуска указать полный путь к work-data.json в кавычках; порядок настройки приведён в начале методички.',check='Название окна, позиции, категории, исполнения и исходные остатки должны совпасть с карточкой назначенной области. Отдельно скачивать каждый JSON не требуется.'),
-dict(kind='text',title='Прямые ссылки на стенды',text='Исходный стенд со всеми данными вариантов: '+download_base+'downloads/Shop-source.zip\n\nИсправленный демонстрационный образец: '+download_base+'downloads/Shop-fixed-example.zip',check='Работу начать с исходного стенда. Исправленный образец открыть отдельно для сверки после самостоятельной диагностики; его демонстрационные данные не заменяют данные своего варианта.')]),'Начало')
+dict(kind='text',title='Выберите вариант по списку группы',text='Найдите себя в списке своей группы. Откройте карточку с тем же номером. Например, номер 7 в списке соответствует варианту 07. При открытии страницы показан вариант 01, выберите свой номер в поле «Предметная область».'),
+dict(kind='text',title='Скачайте свой стенд',text='В карточке есть ссылка на ZIP конкретного варианта. Распакуйте его, откройте stands/Shop-source/Shop.csproj и запустите проект с work-data.json по первому шагу методических рекомендаций.\n\n'+download_base+'downloads/assignment.pdf',check='Название над каталогом совпадает с карточкой. Для сброса данных скопируйте baseline.json поверх work-data.json.')]),'Начало')
 areas=''.join(area(a) for a in C['areas'])
 chooser='<div class="chooser"><label for="variant">Предметная область</label><select id="variant">'+''.join(f'<option value="{a["id"]}">{esc(a["title"])}</option>' for a in C['areas'])+'</select><button id="prev" type="button">Предыдущая</button><button id="next" type="button">Следующая</button><p id="position" aria-live="polite"></p></div>'
 script='''<script>
@@ -103,10 +103,19 @@ for d in C['downloads']:
         with zipfile.ZipFile(dest,'w',zipfile.ZIP_DEFLATED) as z:
             for p in sorted(src.iterdir()):
                 if p.is_file():z.write(p,p.relative_to(ROOT).as_posix())
-            if d['name']=='Shop-source.zip':
-                for p in sorted((ROOT/'stands/data').glob('variant-*.json')):
-                    z.write(p,p.relative_to(ROOT).as_posix())
+            for name in ('baseline.json','work-data.json'):
+                z.writestr(src.relative_to(ROOT).as_posix()+'/'+name,(src/'data.json').read_bytes())
     else:shutil.copyfile(src,dest)
+source=ROOT/'stands/Shop-source'
+for a in C['areas']:
+    number=a['id']
+    data=(ROOT/f'stands/data/variant-{number:02}.json').read_bytes()
+    with zipfile.ZipFile(dl/f'Shop-variant-{number:02}.zip','w',zipfile.ZIP_DEFLATED) as z:
+        for p in sorted(source.iterdir()):
+            if p.is_file() and p.name!='data.json':
+                z.write(p,p.relative_to(ROOT).as_posix())
+        for name in ('data.json','baseline.json','work-data.json'):
+            z.writestr('stands/Shop-source/'+name,data)
 for src,dst in [('stands/Shop-fixed/RepairLogic.cs','RepairLogic.cs'),('content/contract.md','contract.md')]:shutil.copyfile(ROOT/src,dl/dst)
 report=(ROOT/'content/report-template.md').read_text(encoding='utf-8')
 put('downloads/report-template.md',report)
